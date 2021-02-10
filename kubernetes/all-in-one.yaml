@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: flask
-        image: teperwoman/flask
+        image: teperwoman/nfm
         ports:
         - containerPort: 9091
 ---
@@ -38,7 +38,7 @@ spec:
     spec:
       containers:
       - name: nginx
-        image: teperwoman/nginx
+        image: teperwoman/nfm2
         ports:
         - containerPort: 80
 ---
