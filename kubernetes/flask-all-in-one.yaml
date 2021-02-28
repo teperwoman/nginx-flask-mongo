@@ -1,0 +1,41 @@
+
+kind: Namespace
+apiVersion: v1
+metadata:
+  name: nfm
+
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: flask
+  labels:
+    app: flask
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: flask
+  template:
+    metadata:
+      labels:
+        app: flask
+    spec:
+      containers:
+      - name: flask
+        image: teperwoman/nfm
+        ports:
+        - containerPort: 9091
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: flask
+spec:
+  selector:
+    app: flask
+  ports:
+    - protocol: TCP
+      port: 9091
+      targetPort: 9091
