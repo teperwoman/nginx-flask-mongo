@@ -97,7 +97,6 @@ jobs:
           namespace: 'nfm'
           manifests: |
               kubernetes/flask-all-in-one.yaml
-              kubernetes/service.yaml
           images: 'tftest/flask:${{ github.sha }}'
           kubectl-version: 'latest'
 
@@ -107,5 +106,5 @@ jobs:
           namespace: 'nfm'
           manifests: |
               kubernetes/nginx-all-in-one.yaml
-          images: 'tftest/nginx:${{ github.sha }}'
+          images: 'tftest/nfm2:${{ github.sha }}'
           kubectl-version: 'latest'
