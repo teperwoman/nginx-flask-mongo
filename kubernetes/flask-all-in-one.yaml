@@ -24,7 +24,7 @@ spec:
     spec:
       containers:
       - name: flask
-        image: teperwoman/nfm
+        image: tftest/flask
         ports:
         - containerPort: 9091
 ---

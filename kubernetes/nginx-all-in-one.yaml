@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: nginx
-        image: teperwoman/nfm2
+        image: teperwoman/nginx
         ports:
         - containerPort: 80
 ---
