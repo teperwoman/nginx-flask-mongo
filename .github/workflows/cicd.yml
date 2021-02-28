@@ -36,7 +36,7 @@ jobs:
         id: docker_build
         uses: docker/build-push-action@v2
         with:
-          context: ./
+          context: ./flask/
           file: ./Dockerfile
           push: true
           tags: tftest/flask:latest
@@ -46,7 +46,7 @@ jobs:
         id: docker_build_github_sha_tag
         uses: docker/build-push-action@v2
         with:
-          context: ./
+          context: ./flask/
           file: ./Dockerfile
           push: true
           tags: tftest/flask:${{ github.sha }}
@@ -57,7 +57,7 @@ jobs:
         id: docker_build_2
         uses: docker/build-push-action@v2
         with:
-          context: ./
+          context: ./nginx/
           file: ./Dockerfile
           push: true
           tags: tftest/nfm2:latest
@@ -67,10 +67,10 @@ jobs:
         id: docker_build_2_github_sha_tag
         uses: docker/build-push-action@v2
         with:
-          context: ./
+          context: ./nginx/
           file: ./Dockerfile
           push: true
-          tags: tftest/nginx:${{ github.sha }}
+          tags: tftest/nfm2:${{ github.sha }}
 
       - name: Image digest
         run: echo ${{ steps.docker_build.outputs.digest }}
